@@ -1,0 +1,177 @@
+﻿
+header#header {
+    background-color: #fff;
+    border-bottom: 3px solid $font-secondary-color;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+
+    .sprite {
+        float: right;
+    }
+}
+
+.nav-logo-container {
+    margin-top: 10px;
+
+    .nav-logo {
+
+    }
+}
+
+#wp-nav-menu {
+    background-color: #fff;
+    border-style: none;
+    margin: 0;
+    z-index: 10;
+    border-radius: 0;
+    min-height: auto;
+
+    .navbar-header {
+
+        .glyphicon.glyphicon-home {
+            color: $menu-text-color;
+            font-size: 1.5em;
+            margin: 10px;
+        }
+    }
+
+    #wp-nav-bar {
+        border-width: 0;
+        box-shadow: none;
+        width: 100%;
+
+        .nav-logo-container {
+            padding: 0;
+            max-width: 200px;
+
+            .nav-logo {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .navbar-nav {
+            text-transform: capitalize;
+            margin: 10px 0 0 0;
+            padding: 10px;
+            width: auto;
+            
+            > li > a {
+                font-family: $menu-font;
+                text-transform: uppercase;
+                font-size: 1.2em;
+                color: $menu-text-color;
+
+                &:active, &:link, &:visited {
+                    text-align: center;
+                    padding: 5px 15px !important;
+                }
+
+                &:hover {
+                    color: $font-secondary-color;
+                    text-decoration: underline;
+                }
+
+                .caret {
+                    margin-left: 15px;
+                }
+            }
+
+            > .open > a {
+                font-family: $menu-font;
+                text-transform: uppercase;
+                font-size: 1.2em;
+
+                &:active, &:visited, &:link, &:focus {
+                    background-color: #fff;
+                }
+
+                &:hover {
+                    background-color: #fff;
+                }
+            }
+
+            &.current-menu-item a {
+                font-family: $menu-font;
+                text-transform: uppercase;
+                font-size: 1.2em;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    font-size: 0.8em;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+
+    li {
+        color: $menu-text-color;
+
+        a {
+            padding: 10px 25px;
+            color: $menu-text-color;
+            font-size: 1.4em;
+
+            &:active, &:visited, &:link, &:focus {
+                color: $menu-text-color;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+}
+
+.header-search-container {
+    margin-bottom: 10px;
+
+    .form-group {
+            margin: 0 10px;
+
+        label {
+
+        }
+
+        select {
+            border-radius: 0;
+            margin: 0 0 0 5px;
+        }
+
+        input {
+            border-radius: 0;
+            background-color: #257593;
+            color: #fff;
+        }
+    }
+}
+
+
+@include breakpoint(xs) {
+
+    .header-search-container {
+        margin-bottom: 20px;
+    }
+}
+
+@include breakpoint(sm) {
+
+
+}
+
+@include breakpoint(md) {
+
+
+}
+
+@include breakpoint(lg) {
+
+}

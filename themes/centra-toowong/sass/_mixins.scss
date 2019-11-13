@@ -1,0 +1,91 @@
+@mixin border-radius($topleft, $topright: $topleft, $bottomright: $topleft, $bottomleft: $topleft) {
+	-moz-border-radius-topleft:     $topleft;
+	-moz-border-radius-topright:    $topright;
+	-moz-border-radius-bottomright: $bottomright;
+	-moz-border-radius-bottomleft:  $bottomleft;
+	-webkit-border-radius:          $topleft $topright $bottomright $bottomleft;
+	border-radius:                  $topleft $topright $bottomright $bottomleft;
+
+}
+
+@mixin set-border-width($top, $right: $top, $bottom: $top, $left: $top) {
+	border-width-top:	$top;
+	border-width-right:	$right;
+	border-width-bottom:$bottom;
+	border-width-left:	$left;
+	border-width:		$top $right $bottom $left;
+	border-style:		solid;
+}
+@mixin set-border-color($top, $right: $top, $bottom: $top, $left: $top) {
+	border-color-top:	$top;
+	border-color-right:	$right;
+	border-color-bottom:$bottom;
+	border-color-left:	$left;
+	border-color:		$top $right $bottom $left;
+}
+
+@mixin set-padding($top, $right: $top, $bottom: $top, $left: $top) {
+	padding-top:	$top;
+	padding-right:	$right;
+	padding-bottom:	$bottom;
+	padding-left:	$left;
+	padding:		$top $right $bottom $left;
+}
+
+@mixin set-margin($top, $right: $top, $bottom: $top, $left: $top) {
+	margin-top:		$top;
+	margin-right:	$right;
+	margin-bottom:	$bottom;
+	margin-left:	$left;
+	margin:			$top $right $bottom $left;
+}
+
+@mixin border-box-fix{ 
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); /*IE8*/
+}
+
+@mixin transparent-container {
+    background: rgba(0, 0, 0, .50);
+}
+
+@mixin thick-border {
+    border: 10px solid $font-color;
+}
+
+@mixin set-background($bg-color: $font-color-light, $font-color: $font-color-dark) {
+    background-color: $bg-color;
+    color: $font-color;
+}
+
+/*********************
+BREAKPOINTS
+*********************/
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: $screen-xs-max) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (min-width: $screen-lg-min) { @content; }
+  }
+ 
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}

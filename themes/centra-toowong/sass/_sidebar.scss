@@ -1,0 +1,35 @@
+﻿.sidebar-container {
+    @include thick-border();
+    @include set-background();
+    margin-top: 30px;
+    padding: 30px 20px 5px 20px;
+
+    #sidebar {
+
+        .widget-area {
+            font-size: 0.8em;
+            line-height: 1.5;
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+
+                li {
+                    padding: 15px 5px;
+
+                    &:first-of-type {
+                        padding-top: 0;
+                    }
+
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid #fff;
+                    }
+
+                    h3 {
+                        margin: 0 0 5px 0;
+                    }
+                }
+            }
+        }
+    }
+}

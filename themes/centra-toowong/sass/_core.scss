@@ -1,0 +1,140 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "_variables";
+@import "_mixins";
+
+* {
+    box-sizing: border-box !important;
+}
+
+.cover-background-image {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    &.parallax {
+        background-attachment: fixed;
+    }
+}
+
+.sprite {
+    background-image: url('images/social-media-icons.png');
+    background-repeat: no-repeat;
+    width: 38px;
+    height: 38px;
+    margin: 0 3px;
+    
+    @media (max-width: 768px) {
+        zoom: 0.80;
+    }
+
+    @media (max-width: 320px) {
+        zoom: 0.50;
+    }         
+}
+
+.facebook-sprite {
+    background-position: -2px -2px
+}
+
+.linkedin-sprite {
+    background-position: -81px -41px;
+}
+
+.twitter-sprite {
+    background-position: -81px -41px;
+}
+
+.google-sprite {
+    background-position: -2px -81px;
+}
+
+.youtube-sprite {
+    background-position: -81px -81px;
+}
+
+/*    Bootstrap Override: */
+.table {
+    font-size: 0.8em;
+    
+    th {
+        font-size: 0.9em;
+        border-top: 1px;
+        color: #fff;
+    }
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.dropdown-menu {
+    padding: 0 !important;
+}
+
+//  Forms
+.required {
+
+    &:after {
+        content: "*";
+        @extend .text-danger;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+}
+
+input#search {
+    & + span > button.btn {
+        padding-top: 7px;
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $heading-font;
+    font-weight: bold;
+    color: $menu-text-color;
+
+    a {
+
+        &:active, &:link, &:visited {
+            font-family: $header-font;
+            color: $menu-text-color;
+        }
+
+        &:hover {
+            font-family: $header-font;
+            color: #fff;
+        }
+
+    }
+}
+
+a {
+
+    &:active, &:link, &:visited {
+        color: $font-color;
+    }
+
+    &:hover {
+        color: $font-secondary-color;
+    }
+}
+
+img {
+
+    &.alignleft {
+        float: left;
+    }
+    &.alignright {
+        float: left;
+    }
+}
+
+.btn {
+
+    .glyphicon {
+        margin-right: 5px;
+    }
+}

@@ -1,0 +1,36 @@
+﻿
+#comments {
+    color: $font-color-lightest;
+
+    section {
+        border-top: 1px solid $font-color-lightest;
+        margin-top: 20px;
+
+        h2 {
+            color: $font-color-lightest;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+
+            > li {
+                border-bottom: 1px solid $font-color-lightest;
+                padding-bottom: 10px;
+            }
+
+            li img {
+                margin: 5px;
+                border: none;
+            }
+        }
+
+    }
+
+}
+
+.entry-meta {
+    float: right;
+    padding: 10px 5px;
+}
+

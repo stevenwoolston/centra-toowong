@@ -1,0 +1,346 @@
+@import url('//fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:400,400i,700');
+@import "_bootstrap.scss";
+@import "vendor/_animate.scss";
+@import "_core.scss";
+@import "_mixins.scss";
+@import "carousel.scss";
+@import "footer.scss";
+@import "header.scss";
+@import "frontpage.scss";
+@import "page.scss";
+@import "apartment.scss";
+
+body {
+    background-color: $bg-color;
+    font-family: $body-font, sans-serif;
+    font-size: 16px;
+    color: $font-color;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+
+    .page-wrap {
+        background-color: $font-secondary-color;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+.search-results-roll {
+
+    .row { 
+        margin-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $font-secondary-color;
+
+        h2 {
+            color: $font-secondary-color;
+        }
+    }
+}
+
+//  About Us Styling
+.aboutus-post-item, .concierge-post-item {
+    margin: 100px 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-container {
+		color: #fff;
+		
+		.btn {
+			border-radius: 0;
+
+			&.btn-primary {
+				font-style: normal;
+				margin-top: 10px;
+				color: #fff;
+			}
+		}
+    }
+}
+
+.about-post-hero-container {
+    min-height: 600px;
+
+    .text-container {
+        background: rgba(255, 255, 255, 0.5);
+        margin: 100px 0;
+        padding: 30px;
+        line-height: 1.5em;
+        font-size: 2em;
+        font-style: italic;
+        color: $font-secondary-color;
+    }
+}
+
+.hero-excerpt {
+    background-color: $menu-text-color;
+    padding: 20px 40px;
+
+    .hero-excerpt-text {
+        color: #fff;
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+}
+
+.about-post-right-container, .about-post-left-container {
+
+    img {
+        //min-height: 50vh;
+    }
+
+    .text-container {
+        margin-top: 30px;
+        text-align: center;
+        color: #fff;
+
+        h2 {
+            color: #fff;
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.5em;
+            color: #fff;
+        }
+    }
+}
+
+.about-post-container {
+    h2 {
+        color: #fff;
+        font-size: 3em;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+
+}
+//   end About Us
+
+.concierge-form {
+
+	.services-required {
+		display: block;
+
+		.wpcf7-checkbox {
+			height: auto;
+
+			.wpcf7-list-item {
+				display: block;
+				padding: 5px 0;
+	
+				.wpcf7-list-item-label {
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+.page-content-container {
+	margin-top: -100px;
+	
+	h2 {
+		text-transform: uppercase;
+		font-size: 3em;
+		color: #fff;
+	}
+
+	p {
+		color: #fff;
+		font-size: 1.5em;
+		line-height: 1.5em;
+	}
+}
+
+.modal-content {
+	border-radius: 0;
+}
+
+.mejs-container * {
+	width: 100%;
+}
+
+//  Responsive
+@include breakpoint(xs) {
+
+    body {
+        line-height: 1.5em;
+    }
+
+    .navbar-default {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        @include set-background();
+
+        .navbar-toggle {
+            color: $menu-text-color;
+            border: none;
+
+            &:hover, &:focus {
+                background-color: #fff;
+                color: #fff;
+                border: none;
+            }
+
+            .button-collapse-title {
+                position: absolute;
+                right: 40px;
+                top: 6px;
+            }
+
+            .icon-bar {
+                background-color: $bg-color;
+            }
+        }
+
+        .navbar-header {
+            height: auto;
+        }
+
+        #wp-nav-bar {
+            padding: 0 0 20px 0;
+
+            .navbar-nav {
+                margin: 0;
+                width: 100%;
+
+                li {
+
+                    a {
+
+                        &:active, &:link, &:visited {
+                            text-align: center;
+                            color: #fff;
+                            padding: 10px 0 !important;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .cover-background-image {
+        background-position: 50%;
+    }
+
+    header#header {
+        height: auto;
+    }
+
+    #header .header-title {
+        font-size: 1.4em;
+        margin-top: 0;
+        //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        text-shadow: -2px 4px 10px #444;
+    }
+
+    .slideshow-window .slideshow-slide-caption {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .footer p {
+        text-align: center;
+    }
+
+    .g-recaptcha {
+        margin: auto;
+        width: auto;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: scale(0.85);
+        //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+        transform-origin: 0 0;
+    }
+
+    .home-hero-text {
+        background-color: rgba(0, 0, 0, .60);
+        padding: 0;
+        width: 90%;
+    }
+
+    .content-box-container {
+
+        .content-box {
+            padding: 5px;
+
+            article {
+                padding: 5px;
+
+                .col-xs-12 {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+//  Sprites
+.apartment-sprite {
+    background-image: url('images/icon-sprite.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+}
+
+.bedroom-sprite {
+    background-position: -68px -365px;
+}
+
+//  Typography
+.properticon {
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font: normal 20px/1 'properticons';
+    vertical-align: top;
+
+    &.bed {
+        content: "\e001";
+    }
+    &.bath {
+        content: "\e016";
+    }
+}
+
+//  end Typography
+@include breakpoint(sm) {
+
+    .navbar-default .navbar-nav > li > a {
+        font-size: 1.4em;
+    }
+
+    .home-hero {
+        background-color: rgba(0, 0, 0, .60);
+        background-position-x: 50%;
+    }
+}
+
+@include breakpoint(md) {
+
+    #header .header-title {
+        font-size: 3em;
+    }
+
+    .home-hero {
+        background-color: rgba(0, 0, 0, .60);
+        background-position-x: 45%;
+    }
+}
+
+@include breakpoint(lg) {
+
+}

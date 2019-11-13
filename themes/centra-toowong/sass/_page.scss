@@ -1,0 +1,251 @@
+﻿.page, .error404, .single {
+
+    article.apartment {
+        border: 3px solid darken($font-secondary-color, 15%);
+        padding-bottom: 20px;
+    }
+
+    .apartment-image-carousel {
+        margin-top: 20px;
+    }
+
+    .carousel {
+        border: 1px solid #eee;
+    }
+
+    .booking-container {
+        width: 150px;
+        margin: 10px 5px 0;
+
+        .btn {
+            margin-bottom: 5px;
+        }
+    }
+
+}
+
+.blogroll {
+
+}
+
+// Floor Plans Listing
+.page-floor-plan-container {
+
+	.content-container {
+		background-color: #fff;
+		padding: 20px;	
+
+		.floor-plan-apartment-container {
+			border: 1px solid #ddd;
+			margin: 10px 0;
+
+			header {
+
+				h3 {
+		
+					small {
+						margin-left: 30px;
+					}
+				}
+			}
+
+			.floor-plan-image {
+				height: 30vh;
+				text-align: center;
+
+				img {
+					height: 90%;
+					max-width: 100%;
+				}
+
+			}
+
+			&:hover {
+				box-shadow: 5px 5px 5px #666;
+				position: relative;
+				top: -2px;
+			}
+		}
+
+		.floor-plan-container {
+			border: 1px solid #333;
+			box-shadow: 5px 5px 5px #666;
+			margin-bottom: 20px;
+			position: relative;
+
+			header {
+				top: 10vh;
+				z-index: 100;
+
+				h3 {
+		
+					small {
+						margin-left: 30px;
+					}
+				}
+			}
+
+			.floor-plan-image {
+				height: 30vh;
+				text-align: center;
+				perspective: 1000px;
+				position: relative;
+
+				img.floorplan-image {
+					transition: transform 1s, filter 2s, box-shadow 0.7s;
+					height: 90%;
+					max-width: 100%;
+					filter: grayscale(90%);
+					transform: rotateX(55deg);
+					box-shadow: 10px 10px 10px #bbb;
+
+					&:hover {
+						filter: grayscale(0);
+						transform: rotateX(0);
+						box-shadow: 0 0 0 #fff;
+					}
+				}
+
+				img.compass {
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 40px;
+				}
+			}
+
+			.cbd-precinct-text {
+				position: absolute;
+				transition: top 1s, font-size 1s, opacity 1s;
+				width: 200px;
+				top: 0;
+				right: -25px;
+				opacity: 0;
+				font-size: 0.8em;
+			}
+
+			.shopping-precinct-text {
+				position: absolute;
+				transition: left 1s, font-size 1s, opacity 1s;
+				width: 200px;
+				top: 150px;
+				left: -100px;
+				font-size: 0.8em;
+				transform: rotate(270deg);
+				opacity: 0;
+			}
+
+			&:hover {
+
+				.shopping-precinct-text {				
+					left: -70px;
+					font-size: 1.3em;
+					opacity: 1;
+				}
+
+				.cbd-precinct-text {
+					top: 30px;
+					font-size: 1.3em;
+					opacity: 1;
+				}
+			}
+
+		}
+	}
+}
+
+@include breakpoint(xs) {
+    .single {
+
+        .apartment {
+			padding-bottom: 0;
+
+            .apartment-header {
+
+                a.btn {
+                    font-size: 0.7em;
+                    margin-top: 5px;
+                }
+            }
+        }
+	}
+	
+	.page-floor-plan-container {
+
+		.content-container {
+			padding: 20px 0;
+
+			header {
+				margin-bottom: 20px;
+			}
+
+			.floor-plan-container {
+
+				header {
+
+					h3 {
+
+						small {
+							margin-left: 0;
+						}
+					}
+				}
+
+				.floor-plan-image {
+					height: 25vh;
+					perspective: 0;
+
+					img {
+						height: auto;
+						width: 100%;
+						transition: none;
+						filter: grayscale(0%);
+						transform: rotateX(0);
+		
+						&:hover {
+							filter: none;
+							transform: none;
+						}
+					}
+				}
+
+			}
+
+			> div, .image-container {
+				height: auto !important;
+			}
+
+			.image-container {
+
+				img {
+					height: auto !important;
+					width: 100%;
+				}
+			}
+
+			h3 small {
+				display: block;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+@include breakpoint(sm) {
+    .single {
+
+        article.apartment {
+			padding-bottom: 0;
+		}
+	}
+
+}
+
+@include breakpoint(md) {
+
+
+}
+
+@include breakpoint(lg) {
+
+}

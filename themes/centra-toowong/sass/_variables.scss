@@ -1,0 +1,19 @@
+$bg-color: #257593;
+$menu-text-color: #257593;
+
+$primary-font: "Source Sans Pro";
+$secondary-font: "Open Sans";
+$tertiary-font: $secondary-font;
+$menu-font: "Lato";
+$body-font: $primary-font;
+$header-font: "Lato";
+$heading-font: "Source Sans Pro";
+$carousel-font: $secondary-font;
+$font-color: #3f3f3f;
+$font-secondary-color: #B5A786;
+$font-color-light: lighten($font-color, 15%);
+$font-color-lightest: lighten($font-color-light, 5%);
+$font-color-dark: darken($font-color, 15%);
+$font-color-darkest: darken($font-color-dark, 5%);
+$font-size: 16px;
+$body-bg: #fff;
